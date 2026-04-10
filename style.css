@@ -25,8 +25,8 @@
     --text-primary:    #f0ecff;
     --text-secondary:  #9b90c0;
     --text-muted:      #4e4570;
-    --border:          rgba(46, 83, 128, 0.15);
-    --border-strong:   rgba(46, 83, 128, 0.35);
+    --border:          #162436;
+    --border-strong:   #1E3E5E;
 
     --nav-height: 68px;
     --max-width:  1180px;
@@ -539,7 +539,7 @@ ul { list-style: none; }
     z-index: 1;
     width: 42px; height: 42px;
     border-radius: 50%;
-    background: rgba(46, 83, 128, 0.75);
+    background: #2E5380;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -952,7 +952,7 @@ ul { list-style: none; }
     position: absolute;
     top: 14px; left: 14px;
     right: -14px; bottom: -14px;
-    border: 1px solid rgba(46, 83, 128, 0.3);
+    border: 1px solid #1E3E5E;
     border-radius: var(--radius-lg);
     z-index: -1;
 }
@@ -1198,7 +1198,7 @@ ul { list-style: none; }
 .form-success-icon {
     width: 56px; height: 56px;
     border-radius: 50%;
-    background: rgba(46, 83, 128, 0.15);
+    background: #162436;
     border: 1.5px solid var(--purple-primary);
     display: flex;
     align-items: center;
