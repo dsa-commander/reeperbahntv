@@ -1,6 +1,6 @@
 /* ============================================================
    REEPERBAHNTV — Stylesheet
-   Gritty dark aesthetic with purple/pink brand palette
+   Gritty dark aesthetic with brand blue palette
    ============================================================ */
 
 /* --- Reset & Base --- */
@@ -17,13 +17,13 @@
     --bg-card:         #0d1520;
     --bg-card-hover:   #122030;
     --purple-primary:  #2E5380;
-    --purple-light:    #5B8FBF;
+    --purple-light:    #4d87c4;
     --purple-deep:     #1A3050;
     --pink-accent:     #fc5185;
     --gold-accent:     #ffcd35;
     --teal-accent:     #00b090;
-    --text-primary:    #f0ecff;
-    --text-secondary:  #8aa4bc;
+    --text-primary:    #dce8f5;
+    --text-secondary:  #7a9dbf;
     --text-muted:      #456080;
     --border:          #162436;
     --border-strong:   #1E3E5E;
