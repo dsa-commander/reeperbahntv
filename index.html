@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReeperbahnTV — Dean Brian Hall</title>
-    <meta name="description" content="ReeperbahnTV — Documentary filmmaker, historian, and author Dean Brian Hall uncovers the untold stories of Hamburg's most infamous mile.">
+    <meta name="description" content="ReeperbahnTV — Dokumentarfilmer, Historiker und Autor Dean Brian Hall enthüllt die unerzählten Geschichten der Reeperbahn.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
 </head>
 <body>
 
-    <!-- Grain Texture Overlay -->
     <div class="grain" aria-hidden="true"></div>
 
     <!-- ========== NAVIGATION ========== -->
@@ -21,20 +20,20 @@
             <a href="#home" class="nav-logo">
                 <img src="logo.png" alt="ReeperbahnTV" class="nav-logo-img">
             </a>
-            <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+            <button class="nav-toggle" aria-label="Menü öffnen" id="navToggle">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#watch" class="nav-link">Watch</a></li>
-                <li><a href="#books" class="nav-link">Books</a></li>
-                <li><a href="#bio" class="nav-link">Bio</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#home"    class="nav-link" data-i18n="nav.home"></a></li>
+                <li><a href="#watch"   class="nav-link" data-i18n="nav.watch"></a></li>
+                <li><a href="#books"   class="nav-link" data-i18n="nav.books"></a></li>
+                <li><a href="#bio"     class="nav-link" data-i18n="nav.bio"></a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact"></a></li>
                 <li>
                     <div class="lang-toggle">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <span>/</span>
                         <button class="lang-btn" data-lang="de">DE</button>
+                        <span>/</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
                     </div>
                 </li>
             </ul>
@@ -47,21 +46,16 @@
             <div class="hero-bg"></div>
             <div class="hero-neon-bar"></div>
             <div class="hero-content">
-                <p class="hero-eyebrow">Hamburg's Reeperbahn</p>
-                <h1 class="hero-title">
-                    HISTORY<br>
-                    <span class="hero-title-outline">LIVES</span><br>
-                    IN THE<br>
-                    SHADOWS
-                </h1>
-                <p class="hero-desc">Documentary filmmaker, historian, and author Dean Brian Hall uncovers the untold stories of Hamburg's most infamous mile — the Reeperbahn.</p>
+                <p class="hero-eyebrow" data-i18n="hero.eyebrow"></p>
+                <h1 class="hero-title" data-i18n-html="hero.title"></h1>
+                <p class="hero-desc" data-i18n="hero.desc"></p>
                 <div class="hero-ctas">
-                    <a href="#watch" class="btn btn-primary">Watch Now</a>
-                    <a href="#books" class="btn btn-outline">Get the Book</a>
+                    <a href="#watch" class="btn btn-primary" data-i18n="hero.cta.watch"></a>
+                    <a href="#books" class="btn btn-outline" data-i18n="hero.cta.books"></a>
                 </div>
             </div>
             <div class="hero-scroll-indicator">
-                <span>Scroll</span>
+                <span data-i18n="hero.scroll"></span>
                 <div class="hero-scroll-line"></div>
             </div>
         </div>
@@ -71,14 +65,13 @@
     <section id="watch">
         <div class="section-container">
             <div class="section-header reveal">
-                <p class="section-label">Documentary</p>
-                <h2 class="section-title">WATCH</h2>
-                <p class="section-subtitle">Exclusive short documentaries on Hamburg's most infamous street. New episodes on YouTube.</p>
-                <a href="https://www.youtube.com/@reeperbahntv" target="_blank" rel="noopener" class="btn btn-outline-sm">Visit Channel &rarr;</a>
+                <p class="section-label" data-i18n="watch.label"></p>
+                <h2 class="section-title" data-i18n="watch.title"></h2>
+                <p class="section-subtitle" data-i18n="watch.subtitle"></p>
+                <a href="https://www.youtube.com/@reeperbahntv" target="_blank" rel="noopener" class="btn btn-outline-sm" data-i18n="watch.channel"></a>
             </div>
 
             <div class="video-grid">
-                <!-- Featured embed — most recent video -->
                 <div class="video-card featured reveal">
                     <div class="video-embed">
                         <iframe
@@ -90,20 +83,17 @@
                         </iframe>
                     </div>
                     <div class="video-info">
-                        <span class="video-tag">Latest Upload</span>
+                        <span class="video-tag" data-i18n="watch.latest"></span>
                         <h3>Reeperbahn: Ein neuer Radweg für einen bestehenden Radweg?</h3>
                     </div>
                 </div>
 
-                <!-- More videos with real thumbnails -->
                 <div class="video-placeholder-grid">
                     <div class="video-placeholder reveal reveal-delay-1">
                         <a href="https://www.youtube.com/watch?v=C_MfsCvWgmM" target="_blank" rel="noopener">
                             <div class="vp-thumb">
                                 <img src="https://img.youtube.com/vi/C_MfsCvWgmM/hqdefault.jpg" alt="Hamburgs Kultkneipe im Wandel" loading="lazy">
-                                <div class="vp-play">
-                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                                </div>
+                                <div class="vp-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
                             </div>
                             <p>Hamburgs Kultkneipe im Wandel</p>
                         </a>
@@ -112,9 +102,7 @@
                         <a href="https://www.youtube.com/watch?v=kdhQt4QfxE4" target="_blank" rel="noopener">
                             <div class="vp-thumb">
                                 <img src="https://img.youtube.com/vi/kdhQt4QfxE4/hqdefault.jpg" alt="Kult-Kiezlokal schließt nach 20 Jahren" loading="lazy">
-                                <div class="vp-play">
-                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                                </div>
+                                <div class="vp-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
                             </div>
                             <p>Kult-Kiezlokal schließt nach 20 Jahren</p>
                         </a>
@@ -122,10 +110,8 @@
                     <div class="video-placeholder reveal reveal-delay-3">
                         <a href="https://www.youtube.com/watch?v=NmaaVdGt8KY" target="_blank" rel="noopener">
                             <div class="vp-thumb">
-                                <img src="https://img.youtube.com/vi/NmaaVdGt8KY/hqdefault.jpg" alt="Das ist nicht mehr meine Welt – ein Abschied von der Reeperbahn" loading="lazy">
-                                <div class="vp-play">
-                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                                </div>
+                                <img src="https://img.youtube.com/vi/NmaaVdGt8KY/hqdefault.jpg" alt="Das ist nicht mehr meine Welt" loading="lazy">
+                                <div class="vp-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
                             </div>
                             <p>„Das ist nicht mehr meine Welt" – ein Abschied von der Reeperbahn</p>
                         </a>
@@ -133,10 +119,8 @@
                     <div class="video-placeholder reveal reveal-delay-3">
                         <a href="https://www.youtube.com/watch?v=Ul4z8Q33UdI" target="_blank" rel="noopener">
                             <div class="vp-thumb">
-                                <img src="https://img.youtube.com/vi/Ul4z8Q33UdI/hqdefault.jpg" alt="Die neue Reeperbahn – wie Social Media den Kiez übernimmt" loading="lazy">
-                                <div class="vp-play">
-                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-                                </div>
+                                <img src="https://img.youtube.com/vi/Ul4z8Q33UdI/hqdefault.jpg" alt="Die neue Reeperbahn" loading="lazy">
+                                <div class="vp-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
                             </div>
                             <p>Die neue Reeperbahn – wie Social Media den Kiez übernimmt</p>
                         </a>
@@ -150,9 +134,9 @@
     <section id="books">
         <div class="section-container">
             <div class="section-header reveal">
-                <p class="section-label">Publications</p>
-                <h2 class="section-title">BOOKS</h2>
-                <p class="section-subtitle">Available in English and German. Each book is a deep dive into the layered, complex history of Hamburg's Reeperbahn — told location by location.</p>
+                <p class="section-label" data-i18n="books.label"></p>
+                <h2 class="section-title" data-i18n="books.title"></h2>
+                <p class="section-subtitle" data-i18n="books.subtitle"></p>
             </div>
 
             <div class="books-grid">
@@ -166,18 +150,18 @@
                             <span class="book-cover-sub">A Location History of<br>an Entertainment District</span>
                             <span class="book-cover-author">Dean Brian Hall</span>
                         </div>
-                        <div class="book-badge">English Edition</div>
+                        <div class="book-badge" data-i18n="book.en.badge"></div>
                     </div>
                     <div class="book-info">
-                        <span class="book-year">Published 2022</span>
-                        <h3 class="book-title">Reeperbahn Tour: A Location History of an Entertainment District</h3>
-                        <p class="book-desc">A meticulous location-by-location history of the world's most famous entertainment district. Five years of research brings the street's colourful past vividly to life — from the earliest theatres to the rock &amp; roll years and beyond.</p>
+                        <span class="book-year" data-i18n="book.en.year"></span>
+                        <h3 class="book-title" data-i18n="book.en.title"></h3>
+                        <p class="book-desc" data-i18n="book.en.desc"></p>
                         <div class="book-meta">
                             <span class="book-lang"><span class="flag">&#127468;&#127463;</span> English</span>
                         </div>
                         <div class="book-actions">
-                            <a href="https://www.amazon.co.uk/s?k=reeperbahn+tour+dean+brian+hall" target="_blank" rel="noopener" class="btn btn-primary">Buy on Amazon</a>
-                            <a href="#contact" class="btn btn-ghost">Local Stockists</a>
+                            <a href="https://www.amazon.co.uk/s?k=reeperbahn+tour+dean+brian+hall" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="book.en.buy"></a>
+                            <a href="#contact" class="btn btn-ghost" data-i18n="book.stockist"></a>
                         </div>
                     </div>
                 </div>
@@ -191,18 +175,18 @@
                             <span class="book-cover-sub">Eine Ortsgeschichte eines<br>Unterhaltungsviertels</span>
                             <span class="book-cover-author">Dean Brian Hall</span>
                         </div>
-                        <div class="book-badge de">Deutsche Ausgabe</div>
+                        <div class="book-badge de" data-i18n="book.de.badge"></div>
                     </div>
                     <div class="book-info">
-                        <span class="book-year">Erschienen 2022</span>
-                        <h3 class="book-title">Reeperbahn Tour: Eine Ortsgeschichte eines Unterhaltungsviertels</h3>
-                        <p class="book-desc">Eine akribische, ortsweise Geschichte des berühmtesten Unterhaltungsviertels der Welt. Über fünf Jahre Forschung lassen die bunte Vergangenheit der Straße lebendig werden — von den ersten Theatern bis zu den Rock-'n'-Roll-Jahren und darüber hinaus.</p>
+                        <span class="book-year" data-i18n="book.de.year"></span>
+                        <h3 class="book-title" data-i18n="book.de.title"></h3>
+                        <p class="book-desc" data-i18n="book.de.desc"></p>
                         <div class="book-meta">
                             <span class="book-lang"><span class="flag">&#127465;&#127466;</span> Deutsch</span>
                         </div>
                         <div class="book-actions">
-                            <a href="https://www.amazon.de/s?k=reeperbahn+tour+dean+brian+hall" target="_blank" rel="noopener" class="btn btn-primary">Bei Amazon kaufen</a>
-                            <a href="#contact" class="btn btn-ghost">Lokale Händler</a>
+                            <a href="https://www.amazon.de/s?k=reeperbahn+tour+dean+brian+hall" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="book.de.buy"></a>
+                            <a href="#contact" class="btn btn-ghost" data-i18n="book.stockist"></a>
                         </div>
                     </div>
                 </div>
@@ -213,42 +197,32 @@
                         <div class="book-cover-art soon">
                             <div class="book-art-lines"></div>
                             <span class="book-cover-title">REEPERBAHN</span>
-                            <span class="book-cover-sub">A Location History of<br>a Red-Light District</span>
-                            <span class="book-cover-author">Volume II</span>
+                            <span class="book-cover-sub" data-i18n="book.soon.sub"></span>
+                            <span class="book-cover-author" data-i18n="book.soon.vol"></span>
                         </div>
-                        <div class="book-badge soon">Coming Soon</div>
+                        <div class="book-badge soon" data-i18n="book.soon.badge"></div>
                     </div>
                     <div class="book-info">
-                        <span class="book-year">Forthcoming</span>
-                        <h3 class="book-title">Reeperbahn: A Location History of a Red-Light District</h3>
-                        <p class="book-desc">The second volume ventures deeper into the shadows — the brothels, the crime, the characters, and the complex social fabric that defines this remarkable street. Available in English and German.</p>
+                        <span class="book-year" data-i18n="book.soon.year"></span>
+                        <h3 class="book-title" data-i18n="book.soon.title"></h3>
+                        <p class="book-desc" data-i18n="book.soon.desc"></p>
                         <div class="book-meta">
                             <span class="book-lang"><span class="flag">&#127468;&#127463;</span> English &nbsp;&bull;&nbsp; <span class="flag">&#127465;&#127466;</span> Deutsch</span>
                         </div>
                         <div class="book-actions">
-                            <a href="#contact" class="btn btn-outline">Join the Mailing List</a>
+                            <a href="#contact" class="btn btn-outline" data-i18n="book.soon.cta"></a>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Stockist locations -->
             <div class="books-stockists reveal">
-                <p class="stockists-label">Also available in person at these St. Pauli locations</p>
+                <p class="stockists-label" data-i18n="books.stockists.label"></p>
                 <div class="stockists-list">
-                    <div class="stockist">
-                        <div class="stockist-dot"></div>
-                        <span>Kiez Smoke &mdash; Reeperbahn 155</span>
-                    </div>
-                    <div class="stockist">
-                        <div class="stockist-dot"></div>
-                        <span>St. Pauli Office &mdash; Wohlwillstr. 1</span>
-                    </div>
-                    <div class="stockist">
-                        <div class="stockist-dot"></div>
-                        <span>St. Pauli Archiv e.V. &mdash; Paul-Roosen-Str. 30</span>
-                    </div>
+                    <div class="stockist"><div class="stockist-dot"></div><span>Kiez Smoke &mdash; Reeperbahn 155</span></div>
+                    <div class="stockist"><div class="stockist-dot"></div><span>St. Pauli Office &mdash; Wohlwillstr. 1</span></div>
+                    <div class="stockist"><div class="stockist-dot"></div><span>St. Pauli Archiv e.V. &mdash; Paul-Roosen-Str. 30</span></div>
                 </div>
             </div>
         </div>
@@ -270,37 +244,35 @@
                     <div class="bio-stats reveal">
                         <div class="bio-stat">
                             <span class="stat-number">5+</span>
-                            <span class="stat-label">Years Research</span>
+                            <span class="stat-label" data-i18n="bio.stat.research"></span>
                         </div>
                         <div class="bio-stat">
                             <span class="stat-number">2</span>
-                            <span class="stat-label">Books</span>
+                            <span class="stat-label" data-i18n="bio.stat.books"></span>
                         </div>
                         <div class="bio-stat">
                             <span class="stat-number">3</span>
-                            <span class="stat-label">Languages</span>
+                            <span class="stat-label" data-i18n="bio.stat.languages"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="bio-text-col">
                     <div class="section-header bio-header reveal">
-                        <p class="section-label">The Author</p>
+                        <p class="section-label" data-i18n="bio.label"></p>
                         <h2 class="section-title">DEAN<br>BRIAN HALL</h2>
                     </div>
                     <div class="bio-body reveal">
-                        <blockquote class="bio-quote">
-                            "The Reeperbahn isn't just a street. It's a living archive — every building, every doorway, every name above a venue tells a story that's been half-forgotten."
-                        </blockquote>
-                        <p>Dean Brian Hall was born on 29 June 1978 in Wallsend, Newcastle-Upon-Tyne, England. A linguist by training — holding a BA in Modern Languages (German &amp; Spanish) from the University of Northumbria and a PGCE from Liverpool John Moores University — Dean spent several years working as a translator in Barcelona before relocating to Germany in 2008.</p>
-                        <p>A chance visit to Hamburg in 2012 changed everything. The Reeperbahn, with its layered, contradictory history, became his obsession. What followed was over five years of meticulous archival research, walking every centimetre of the street, interviewing locals, and piecing together the district's story location by location.</p>
-                        <p>His debut book, <em>Reeperbahn Tour: A Location History of an Entertainment District</em>, was published in 2022. A second volume is in progress. His YouTube channel, <strong>ReeperbahnTV</strong>, continues to document the street's present and past through short-form documentary filmmaking.</p>
-                        <p>He is fluent in German, Spanish, and Catalan, and is based in Hamburg.</p>
+                        <blockquote class="bio-quote" data-i18n="bio.quote"></blockquote>
+                        <p data-i18n="bio.p1"></p>
+                        <p data-i18n="bio.p2"></p>
+                        <p data-i18n-html="bio.p3"></p>
+                        <p data-i18n="bio.p4"></p>
                     </div>
                     <div class="bio-links reveal">
-                        <a href="https://www.youtube.com/@reeperbahntv" target="_blank" rel="noopener" class="bio-social-link">YouTube Channel</a>
+                        <a href="https://www.youtube.com/@reeperbahntv" target="_blank" rel="noopener" class="bio-social-link" data-i18n="bio.link.youtube"></a>
                         <a href="https://www.reeperbahntv.com" target="_blank" rel="noopener" class="bio-social-link">ReeperbahnTV.com</a>
-                        <a href="#contact" class="bio-social-link">Media Enquiries</a>
+                        <a href="#contact" class="bio-social-link" data-i18n="bio.link.media"></a>
                     </div>
                 </div>
 
@@ -312,40 +284,40 @@
     <section id="contact">
         <div class="section-container">
             <div class="section-header reveal">
-                <p class="section-label">Get in Touch</p>
-                <h2 class="section-title">CONTACT</h2>
-                <p class="section-subtitle">Tour bookings, media enquiries, speaking engagements, press requests — all welcome.</p>
+                <p class="section-label" data-i18n="contact.label"></p>
+                <h2 class="section-title" data-i18n="contact.title"></h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle"></p>
             </div>
 
             <div class="contact-layout">
-
                 <div class="contact-info">
+
                     <div class="contact-block reveal">
-                        <h3 class="contact-block-title">Tours</h3>
-                        <p>Dean leads guided walking tours of the Reeperbahn, following the exact route from his book — location by location, story by story.</p>
+                        <h3 class="contact-block-title" data-i18n="contact.tours.title"></h3>
+                        <p data-i18n="contact.tours.desc"></p>
                         <ul class="contact-list">
-                            <li>Private group tours available year-round</li>
-                            <li>Conducted in English or German</li>
-                            <li>2–3 hours starting at the Millerntor</li>
-                            <li>Custom itineraries for film crews &amp; press</li>
-                            <li>Corporate and educational bookings welcome</li>
+                            <li data-i18n="contact.tours.li1"></li>
+                            <li data-i18n="contact.tours.li2"></li>
+                            <li data-i18n="contact.tours.li3"></li>
+                            <li data-i18n="contact.tours.li4"></li>
+                            <li data-i18n="contact.tours.li5"></li>
                         </ul>
                     </div>
 
                     <div class="contact-block reveal reveal-delay-1">
-                        <h3 class="contact-block-title">Media</h3>
+                        <h3 class="contact-block-title" data-i18n="contact.media.title"></h3>
                         <ul class="contact-list">
-                            <li>TV &amp; radio interviews</li>
-                            <li>Podcast appearances</li>
-                            <li>Newspaper &amp; magazine features</li>
-                            <li>Expert commentary on Hamburg's history</li>
-                            <li>Speaking engagements &amp; lectures</li>
-                            <li>Documentary consultancy</li>
+                            <li data-i18n="contact.media.li1"></li>
+                            <li data-i18n="contact.media.li2"></li>
+                            <li data-i18n="contact.media.li3"></li>
+                            <li data-i18n="contact.media.li4"></li>
+                            <li data-i18n="contact.media.li5"></li>
+                            <li data-i18n="contact.media.li6"></li>
                         </ul>
                     </div>
 
                     <div class="contact-block reveal reveal-delay-2">
-                        <h3 class="contact-block-title">Follow</h3>
+                        <h3 class="contact-block-title" data-i18n="contact.follow.title"></h3>
                         <div class="social-links">
                             <a href="https://www.youtube.com/@reeperbahntv" target="_blank" rel="noopener" class="social-link youtube">
                                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -365,38 +337,37 @@
 
                 <div class="contact-form-wrapper reveal">
                     <form class="contact-form" id="contactForm">
-                        <h3 class="form-title">Send a Message</h3>
+                        <h3 class="form-title" data-i18n="form.title"></h3>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                                <label for="name" data-i18n="form.name.label"></label>
+                                <input type="text" id="name" name="name" data-i18n-placeholder="form.name.placeholder" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                <label for="email">E-Mail</label>
+                                <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="enquiry">Enquiry Type</label>
+                            <label for="enquiry" data-i18n="form.enquiry.label"></label>
                             <select id="enquiry" name="enquiry">
-                                <option value="">Select type...</option>
-                                <option value="tour">Tour Booking</option>
-                                <option value="media">Media Enquiry</option>
-                                <option value="press">Press / Interview</option>
-                                <option value="speaking">Speaking Engagement</option>
-                                <option value="books">Books / Wholesale</option>
-                                <option value="other">Other</option>
+                                <option value=""        data-i18n="form.enquiry.default"></option>
+                                <option value="tour"    data-i18n="form.enquiry.tour"></option>
+                                <option value="media"   data-i18n="form.enquiry.media"></option>
+                                <option value="press"   data-i18n="form.enquiry.press"></option>
+                                <option value="speaking"data-i18n="form.enquiry.speaking"></option>
+                                <option value="books"   data-i18n="form.enquiry.books"></option>
+                                <option value="other"   data-i18n="form.enquiry.other"></option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your enquiry..." rows="6" required></textarea>
+                            <label for="message" data-i18n="form.message.label"></label>
+                            <textarea id="message" name="message" data-i18n-placeholder="form.message.placeholder" rows="6" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        <p class="form-note">We'll respond within 48 hours.</p>
+                        <button type="submit" class="btn btn-primary btn-full" data-i18n="form.submit"></button>
+                        <p class="form-note" data-i18n="form.note"></p>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
@@ -405,15 +376,15 @@
     <footer id="footer">
         <div class="footer-container">
             <a href="#home" class="footer-logo">REEPERBAHN<span>TV</span></a>
-            <p class="footer-tagline">The definitive guide to Hamburg's most infamous mile.</p>
+            <p class="footer-tagline" data-i18n="footer.tagline"></p>
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#home">Home</a>
-                <a href="#watch">Watch</a>
-                <a href="#books">Books</a>
-                <a href="#bio">Bio</a>
-                <a href="#contact">Contact</a>
+                <a href="#home"    data-i18n="nav.home"></a>
+                <a href="#watch"   data-i18n="nav.watch"></a>
+                <a href="#books"   data-i18n="nav.books"></a>
+                <a href="#bio"     data-i18n="nav.bio"></a>
+                <a href="#contact" data-i18n="nav.contact"></a>
             </nav>
-            <p class="footer-copy">&copy; 2025 Dean Brian Hall / ReeperbahnTV. All rights reserved.</p>
+            <p class="footer-copy" data-i18n="footer.copy"></p>
         </div>
     </footer>
 
