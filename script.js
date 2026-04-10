@@ -36,21 +36,26 @@ const translations = {
     // Books
     'books.label':    'Veröffentlichungen',
     'books.title':    'BÜCHER',
-    'books.subtitle': 'Erhältlich auf Englisch und Deutsch. Jedes Buch ist eine Tiefenanalyse der vielschichtigen Geschichte der Hamburger Reeperbahn — Ort für Ort.',
+    'books.subtitle': 'Erhältlich auf Englisch und Deutsch, direkt bei Blurb — als Softcover, Hardcover oder E-Book. Gedruckt auf Bestellung und weltweit versandt.',
 
-    'book.en.badge': 'Englische Ausgabe',
-    'book.en.year':  'Erschienen 2022',
-    'book.en.title': 'Reeperbahn Tour: A Location History of an Entertainment District',
-    'book.en.desc':  'Eine akribische Ortsgeschichte des berühmtesten Unterhaltungsviertels der Welt auf Englisch. Fünf Jahre Forschung bringen die bunte Vergangenheit der Straße zum Leben.',
-    'book.en.buy':   'Bei Amazon kaufen (EN)',
+    'book.en.badge':  'Englische Ausgabe',
+    'book.en.year':   '2018 · 204 Seiten',
+    'book.en.title':  'Reeperbahn: History of an Entertainment District',
+    'book.en.desc':   'Eine umfassende Erkundung der berühmten Hamburger Straße: ihre Ursprünge, die Straßennamen, die Unterhaltungsgeschichte, die Zeit des Dritten Reichs, den Zweiten Weltkrieg und die Kulturgeschichte — mit über 150 Fotografien.',
+    'book.en.pages':  '204 Seiten · 20×25 cm',
 
-    'book.de.badge': 'Deutsche Ausgabe',
-    'book.de.year':  'Erschienen 2022',
-    'book.de.title': 'Reeperbahn Tour: Eine Ortsgeschichte eines Unterhaltungsviertels',
-    'book.de.desc':  'Eine akribische, ortsweise Geschichte des berühmtesten Unterhaltungsviertels der Welt. Über fünf Jahre Forschung lassen die bunte Vergangenheit der Straße lebendig werden — von den ersten Theatern bis zu den Rock-\'n\'-Roll-Jahren und darüber hinaus.',
-    'book.de.buy':   'Bei Amazon kaufen',
+    'book.de.badge':  'Deutsche Ausgabe',
+    'book.de.year':   '2023 · 188 Seiten',
+    'book.de.title':  'Reeperbahn: Eine Orts- und Geschichtsführung durch ein Unterhaltungsviertel',
+    'book.de.desc':   'Fünf thematische Touren durch das berühmteste Unterhaltungsviertel der Welt. Jeder Ort umfasst zwei Seiten mit historischen und aktuellen Fotografien, die zeigen, wie sich die Straße verändert hat.',
+    'book.de.pages':  '188 Seiten · 20×25 cm',
 
-    'book.stockist': 'Lokale Händler',
+    'book.format.label':     'Format wählen',
+    'book.format.softcover': 'Softcover',
+    'book.format.hardcover': 'Hardcover',
+    'book.format.ebook':     'E-Book',
+    'book.buy.blurb':        'Bei Blurb kaufen',
+    'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
     'book.soon.badge':  'Demnächst',
     'book.soon.year':   'In Vorbereitung',
@@ -148,19 +153,24 @@ const translations = {
     'books.title':    'BOOKS',
     'books.subtitle': "Available in English and German. Each book is a deep dive into the layered, complex history of Hamburg's Reeperbahn — told location by location.",
 
-    'book.en.badge': 'English Edition',
-    'book.en.year':  'Published 2022',
-    'book.en.title': 'Reeperbahn Tour: A Location History of an Entertainment District',
-    'book.en.desc':  "A meticulous location-by-location history of the world's most famous entertainment district. Five years of research brings the street's colourful past vividly to life — from the earliest theatres to the rock & roll years and beyond.",
-    'book.en.buy':   'Buy on Amazon',
+    'book.en.badge':  'English Edition',
+    'book.en.year':   '2018 · 204 pages',
+    'book.en.title':  'Reeperbahn: History of an Entertainment District',
+    'book.en.desc':   "A comprehensive exploration of Hamburg's famous street — its origins, street names, entertainment history, the Third Reich, WWII, and cultural legacy. Featuring over 150 photographs.",
+    'book.en.pages':  '204 pages · 8×10 in',
 
-    'book.de.badge': 'German Edition',
-    'book.de.year':  'Published 2022',
-    'book.de.title': 'Reeperbahn Tour: Eine Ortsgeschichte eines Unterhaltungsviertels',
-    'book.de.desc':  "The German-language edition. A meticulous location-by-location history of the world's most famous entertainment district — five years of research brought vividly to life.",
-    'book.de.buy':   'Buy on Amazon.de',
+    'book.de.badge':  'German Edition',
+    'book.de.year':   '2023 · 188 pages',
+    'book.de.title':  'Reeperbahn: Eine Orts- und Geschichtsführung durch ein Unterhaltungsviertel',
+    'book.de.desc':   "Five themed tours through the world's most famous entertainment district. Each location spans two pages with historical and current photographs showing how the street has changed.",
+    'book.de.pages':  '188 pages · 8×10 in',
 
-    'book.stockist': 'Local Stockists',
+    'book.format.label':     'Choose format',
+    'book.format.softcover': 'Softcover',
+    'book.format.hardcover': 'Hardcover',
+    'book.format.ebook':     'Ebook',
+    'book.buy.blurb':        'Buy on Blurb',
+    'book.stockist.local':   'Or pick up in person in St. Pauli →',
 
     'book.soon.badge':  'Coming Soon',
     'book.soon.year':   'Forthcoming',
@@ -351,6 +361,30 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
 );
 revealEls.forEach(el => revealObserver.observe(el));
+
+/* ============================================================
+   BOOK FORMAT PICKER
+   ============================================================ */
+document.querySelectorAll('.book-card').forEach(card => {
+  const formatBtns = card.querySelectorAll('.format-btn');
+  const priceEl    = card.querySelector('.book-price');
+  const buyBtn     = card.querySelector('.book-buy-btn');
+  if (!formatBtns.length) return;
+
+  formatBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      formatBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update price display
+      if (priceEl) priceEl.textContent = btn.dataset.price;
+
+      // Update buy button link
+      if (buyBtn) buyBtn.href = btn.dataset.url;
+    });
+  });
+});
 
 /* ============================================================
    CONTACT FORM
