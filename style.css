@@ -16,17 +16,17 @@
     --bg-secondary:    #0f0c1a;
     --bg-card:         #151126;
     --bg-card-hover:   #1c1830;
-    --purple-primary:  #673de6;
-    --purple-light:    #8c85ff;
-    --purple-deep:     #2f1c6a;
+    --purple-primary:  #4B4E8A;
+    --purple-light:    #7B7EB8;
+    --purple-deep:     #252762;
     --pink-accent:     #fc5185;
     --gold-accent:     #ffcd35;
     --teal-accent:     #00b090;
     --text-primary:    #f0ecff;
     --text-secondary:  #9b90c0;
     --text-muted:      #4e4570;
-    --border:          rgba(103, 61, 230, 0.15);
-    --border-strong:   rgba(103, 61, 230, 0.35);
+    --border:          rgba(75, 78, 138, 0.15);
+    --border-strong:   rgba(75, 78, 138, 0.35);
 
     --nav-height: 68px;
     --max-width:  1180px;
@@ -135,7 +135,7 @@ ul { list-style: none; }
 .btn-primary:hover {
     background: var(--purple-light);
     transform: translateY(-2px);
-    box-shadow: 0 10px 32px rgba(103, 61, 230, 0.45);
+    box-shadow: 0 10px 32px rgba(75, 78, 138, 0.45);
 }
 
 .btn-outline {
@@ -311,7 +311,7 @@ ul { list-style: none; }
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 70% 60% at 15% 55%, rgba(103, 61, 230, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 60% at 15% 55%, rgba(75, 78, 138, 0.18) 0%, transparent 70%),
         radial-gradient(ellipse 50% 40% at 80% 20%, rgba(252, 81, 133, 0.08) 0%, transparent 60%),
         radial-gradient(ellipse 60% 60% at 55% 85%, rgba(47, 28, 106, 0.22) 0%, transparent 65%),
         linear-gradient(175deg, #0d0818 0%, #09070f 100%);
@@ -530,7 +530,7 @@ ul { list-style: none; }
     z-index: 1;
     width: 42px; height: 42px;
     border-radius: 50%;
-    background: rgba(103, 61, 230, 0.75);
+    background: rgba(75, 78, 138, 0.75);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -622,8 +622,8 @@ ul { list-style: none; }
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(100deg, rgba(103, 61, 230, 0.12) 1px, transparent 1px),
-        linear-gradient(10deg, rgba(103, 61, 230, 0.06) 1px, transparent 1px),
+        linear-gradient(100deg, rgba(75, 78, 138, 0.12) 1px, transparent 1px),
+        linear-gradient(10deg, rgba(75, 78, 138, 0.06) 1px, transparent 1px),
         linear-gradient(80deg, rgba(252, 81, 133, 0.04) 1px, transparent 1px);
     background-size: 40px 40px, 60px 60px, 80px 80px;
 }
@@ -685,7 +685,7 @@ ul { list-style: none; }
     border-radius: 2px;
     z-index: 2;
 }
-.book-badge.de   { background: #3a228a; }
+.book-badge.de   { background: #252762; }
 .book-badge.soon { background: var(--pink-accent); }
 
 .book-info {
@@ -822,7 +822,7 @@ ul { list-style: none; }
     transform: translateX(-50%);
     width: 60%;
     height: 65%;
-    background: linear-gradient(to top, rgba(103, 61, 230, 0.15), transparent);
+    background: linear-gradient(to top, rgba(75, 78, 138, 0.15), transparent);
     border-radius: 50% 50% 0 0;
 }
 
@@ -842,8 +842,8 @@ ul { list-style: none; }
         45deg,
         transparent,
         transparent 3px,
-        rgba(103, 61, 230, 0.03) 3px,
-        rgba(103, 61, 230, 0.03) 4px
+        rgba(75, 78, 138, 0.03) 3px,
+        rgba(75, 78, 138, 0.03) 4px
     );
 }
 
@@ -852,7 +852,7 @@ ul { list-style: none; }
     position: absolute;
     top: 14px; left: 14px;
     right: -14px; bottom: -14px;
-    border: 1px solid rgba(103, 61, 230, 0.3);
+    border: 1px solid rgba(75, 78, 138, 0.3);
     border-radius: var(--radius-lg);
     z-index: -1;
 }
@@ -1069,7 +1069,7 @@ ul { list-style: none; }
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--purple-primary);
-    box-shadow: 0 0 0 3px rgba(103, 61, 230, 0.12);
+    box-shadow: 0 0 0 3px rgba(75, 78, 138, 0.12);
 }
 
 .form-group select {
@@ -1098,7 +1098,7 @@ ul { list-style: none; }
 .form-success-icon {
     width: 56px; height: 56px;
     border-radius: 50%;
-    background: rgba(103, 61, 230, 0.15);
+    background: rgba(75, 78, 138, 0.15);
     border: 1.5px solid var(--purple-primary);
     display: flex;
     align-items: center;
