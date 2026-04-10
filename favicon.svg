@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Brand blue background, rounded like the sign -->
+  <rect width="32" height="32" rx="5" fill="#2E5380"/>
+  <!-- White inset border (the sign frame) -->
+  <rect x="1.5" y="1.5" width="29" height="29" rx="4" fill="none" stroke="white" stroke-width="1.2"/>
+  <!-- R — white serif bold -->
+  <text x="4" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="bold" fill="white">R</text>
+  <!-- tv — red italic, matching the logo script -->
+  <text x="17" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" font-weight="bold" fill="#9B1C1C">tv</text>
+</svg>
