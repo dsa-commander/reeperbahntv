@@ -38,21 +38,14 @@ const translations = {
     'books.title':    'BÜCHER',
     'books.subtitle': 'Erhältlich auf Englisch und Deutsch als Softcover. Auf Bestellung gedruckt und weltweit versandt.',
 
-    'book.en.badge':  'Englische Ausgabe',
-    'book.en.year':   '2018 · 204 Seiten',
-    'book.en.title':  'Reeperbahn: History of an Entertainment District',
-    'book.en.desc':   'Eine umfassende Erkundung der berühmten Hamburger Straße: ihre Ursprünge, die Straßennamen, die Unterhaltungsgeschichte, die Zeit des Dritten Reichs, den Zweiten Weltkrieg und die Kulturgeschichte — mit über 150 Fotografien.',
-    'book.en.pages':  '204 Seiten · 20×25 cm',
+    'book.tour.badge': 'Reeperbahn Tour',
+    'book.tour.year':  '2018 / 2023',
+    'book.tour.title': 'Reeperbahn Tour',
+    'book.tour.desc':  'Dean Halls umfassender Führer durch Hamburgs Reeperbahn — auf Englisch und Deutsch erhältlich. Wählen Sie Ihre bevorzugte Sprachausgabe.',
+    'book.tour.pages': 'Softcover · 188–204 Seiten',
 
-    'book.de.badge':  'Deutsche Ausgabe',
-    'book.de.year':   '2023 · 188 Seiten',
-    'book.de.title':  'Reeperbahn: Eine Orts- und Geschichtsführung durch ein Unterhaltungsviertel',
-    'book.de.desc':   'Fünf thematische Touren durch das berühmteste Unterhaltungsviertel der Welt. Jeder Ort umfasst zwei Seiten mit historischen und aktuellen Fotografien, die zeigen, wie sich die Straße verändert hat.',
-    'book.de.pages':  '188 Seiten · 20×25 cm',
-
-    'book.format.label':     'Format',
-    'book.format.softcover': 'Softcover',
-    'book.buy':              'Jetzt kaufen',
+    'book.lang.label': 'Sprache',
+    'book.buy':        'Jetzt kaufen',
     'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
     'book.yearbook2023.badge': 'Jahrbuch',
@@ -169,21 +162,14 @@ const translations = {
     'books.title':    'BOOKS',
     'books.subtitle': "Available in English and German. Each book is a deep dive into the layered, complex history of Hamburg's Reeperbahn — told location by location.",
 
-    'book.en.badge':  'English Edition',
-    'book.en.year':   '2018 · 204 pages',
-    'book.en.title':  'Reeperbahn: History of an Entertainment District',
-    'book.en.desc':   "A comprehensive exploration of Hamburg's famous street — its origins, street names, entertainment history, the Third Reich, WWII, and cultural legacy. Featuring over 150 photographs.",
-    'book.en.pages':  '204 pages · 8×10 in',
+    'book.tour.badge': 'Reeperbahn Tour',
+    'book.tour.year':  '2018 / 2023',
+    'book.tour.title': 'Reeperbahn Tour',
+    'book.tour.desc':  "Dean Hall's definitive guide to Hamburg's Reeperbahn — available in English and German. Select your preferred language edition below.",
+    'book.tour.pages': 'Softcover · 188–204 pages',
 
-    'book.de.badge':  'German Edition',
-    'book.de.year':   '2023 · 188 pages',
-    'book.de.title':  'Reeperbahn: Eine Orts- und Geschichtsführung durch ein Unterhaltungsviertel',
-    'book.de.desc':   "Five themed tours through the world's most famous entertainment district. Each location spans two pages with historical and current photographs showing how the street has changed.",
-    'book.de.pages':  '188 pages · 8×10 in',
-
-    'book.format.label':     'Format',
-    'book.format.softcover': 'Softcover',
-    'book.buy':              'Buy Now',
+    'book.lang.label': 'Language',
+    'book.buy':        'Buy Now',
     'book.stockist.local':   'Or pick up in person in St. Pauli →',
 
     'book.yearbook2023.badge': 'Yearbook',
@@ -401,39 +387,32 @@ fetch('products.json')
   .then(r => r.json())
   .then(products => {
     document.querySelectorAll('.book-card[data-product]').forEach(card => {
-      const productId  = card.dataset.product;
-      const formats    = products[productId];
-      if (!formats) return;
+      const productId = card.dataset.product;
+      const langs     = products[productId];
+      if (!langs) return;
 
-      const formatBtns = card.querySelectorAll('.format-btn[data-format]');
-      const priceEl    = card.querySelector('.book-price');
-      const buyBtn     = card.querySelector('.book-buy-btn');
+      const langBtns = card.querySelectorAll('.format-btn[data-lang]');
+      const priceEl  = card.querySelector('.book-price');
+      const buyBtn   = card.querySelector('.book-buy-btn');
+      const coverImg = card.querySelector('.book-cover-img');
 
-      formatBtns.forEach(btn => {
-        const fmt = formats[btn.dataset.format];
-        if (fmt) {
-          btn.dataset.price = fmt.price;
-          btn.dataset.url   = fmt.url;
-        }
-      });
-
-      const activeBtn = card.querySelector('.format-btn.active');
-      if (activeBtn && activeBtn.dataset.price) {
-        if (priceEl) priceEl.textContent = activeBtn.dataset.price;
-        if (buyBtn)  buyBtn.href = activeBtn.dataset.url;
+      function applyLang(lang) {
+        const data = langs[lang];
+        if (!data) return;
+        if (priceEl) priceEl.textContent = data.price;
+        if (buyBtn)  buyBtn.href = data.url;
+        const coverKey = 'cover' + lang.charAt(0).toUpperCase() + lang.slice(1);
+        if (coverImg && card.dataset[coverKey]) coverImg.src = card.dataset[coverKey];
       }
 
-      if (formatBtns.length <= 1) {
-        const formatSection = card.querySelector('.book-formats');
-        if (formatSection) formatSection.style.display = 'none';
-      }
+      const activeBtn = card.querySelector('.format-btn.active[data-lang]');
+      applyLang(activeBtn ? activeBtn.dataset.lang : Object.keys(langs)[0]);
 
-      formatBtns.forEach(btn => {
+      langBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          formatBtns.forEach(b => b.classList.remove('active'));
+          langBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          if (priceEl) priceEl.textContent = btn.dataset.price;
-          if (buyBtn)  buyBtn.href = btn.dataset.url;
+          applyLang(btn.dataset.lang);
         });
       });
     });
