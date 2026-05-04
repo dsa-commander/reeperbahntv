@@ -23,7 +23,7 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
 
 // Load .env
 $env = [];
-foreach (file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+foreach (file(dirname(__DIR__) . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
     if (str_starts_with(trim($line), '#') || !str_contains($line, '=')) continue;
     [$key, $val] = explode('=', $line, 2);
     $env[trim($key)] = trim($val);
