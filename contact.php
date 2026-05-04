@@ -12,7 +12,6 @@ $email   = trim(strip_tags($_POST['email']   ?? ''));
 $enquiry = trim(strip_tags($_POST['enquiry'] ?? ''));
 $message = trim(strip_tags($_POST['message'] ?? ''));
 
-// Prevent header injection
 $name  = str_replace(["\r", "\n"], '', $name);
 $email = str_replace(["\r", "\n"], '', $email);
 
@@ -22,16 +21,40 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
     exit;
 }
 
-$to      = 'contact@reeperbahntv.com';
-$subject = '[ReeperbahnTV] ' . ($enquiry ?: 'Enquiry') . ' — ' . $name;
-$body    = "Name: $name\nE-Mail: $email\nType: $enquiry\n\n$message";
-$headers = "From: contact@reeperbahntv.com\r\n"
-         . "Reply-To: $email\r\n"
-         . "Content-Type: text/plain; charset=UTF-8\r\n";
+// Load .env
+$env = [];
+foreach (file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+    if (str_starts_with(trim($line), '#') || !str_contains($line, '=')) continue;
+    [$key, $val] = explode('=', $line, 2);
+    $env[trim($key)] = trim($val);
+}
 
-if (mail($to, $subject, $body, $headers)) {
+require __DIR__ . '/vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host       = $env['SMTP_HOST'];
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $env['SMTP_USER'];
+    $mail->Password   = $env['SMTP_PASS'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = (int)$env['SMTP_PORT'];
+
+    $mail->setFrom($env['MAIL_FROM'], 'ReeperbahnTV');
+    $mail->addAddress($env['MAIL_TO']);
+    $mail->addReplyTo($email, $name);
+
+    $mail->Subject = '[ReeperbahnTV] ' . ($enquiry ?: 'Enquiry') . ' — ' . $name;
+    $mail->Body    = "Name: $name\nE-Mail: $email\nType: $enquiry\n\n$message";
+
+    $mail->send();
     echo json_encode(['success' => true]);
-} else {
+} catch (Exception $e) {
     http_response_code(500);
-    echo json_encode(['success' => false]);
+    echo json_encode(['success' => false, 'error' => $mail->ErrorInfo]);
 }
