@@ -1,15 +1,12 @@
 {
-  "tour": {
-    "en": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_TOUR_EN" },
-    "de": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_TOUR_DE" }
-  },
+  "tour": null,
   "yearbook2023": {
-    "en": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2023_EN" },
-    "de": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2023_DE" }
+    "en": { "price": "€24.99", "url": "https://buy.stripe.com/aFaeVcbI74kF3vCbnZ14403" },
+    "de": { "price": "€24.99", "url": "https://buy.stripe.com/00w28q7rR7wR3vCbnZ14405" }
   },
   "yearbook2024": {
-    "en": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2024_EN" },
-    "de": { "price": "€24.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2024_DE" }
+    "en": { "price": "€24.99", "url": "https://buy.stripe.com/14A28q4fFdVfgio77J14406" },
+    "de": { "price": "€24.99", "url": "https://buy.stripe.com/aFa28q7rR5oJ1nugIj14407" }
   },
   "yearbook2025": null
 }
