@@ -45,6 +45,8 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = (int)$env['SMTP_PORT'];
 
+    $mail->CharSet = 'UTF-8';
+
     $mail->setFrom($env['MAIL_FROM'], 'ReeperbahnTV');
     $mail->addAddress($env['MAIL_TO']);
     $mail->addReplyTo($email, $name);
