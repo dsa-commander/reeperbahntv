@@ -391,22 +391,32 @@ document.querySelectorAll('.book-card').forEach(card => {
    ============================================================ */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = contactForm.querySelector('[type="submit"]');
-    const origText = btn.textContent;
-    btn.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
+    btn.textContent = currentLang === 'de' ? 'Wird gesendet…' : 'Sending…';
     btn.disabled = true;
 
-    setTimeout(() => {
-      const wrapper = contactForm.closest('.contact-form-wrapper');
-      wrapper.innerHTML = `
-        <div class="form-success">
-          <div class="form-success-icon">✓</div>
-          <h4>${currentLang === 'de' ? 'Nachricht gesendet' : 'Message Sent'}</h4>
-          <p>${currentLang === 'de' ? 'Vielen Dank. Dean antwortet innerhalb von 48 Stunden.' : "Thanks for getting in touch. Dean will respond within 48 hours."}</p>
-        </div>`;
-    }, 900);
+    try {
+      const res  = await fetch('contact.php', { method: 'POST', body: new FormData(contactForm) });
+      const json = await res.json();
+
+      if (json.success) {
+        const wrapper = contactForm.closest('.contact-form-wrapper');
+        wrapper.innerHTML = `
+          <div class="form-success">
+            <div class="form-success-icon">✓</div>
+            <h4>${currentLang === 'de' ? 'Nachricht gesendet' : 'Message Sent'}</h4>
+            <p>${currentLang === 'de' ? 'Vielen Dank. Dean antwortet innerhalb von 48 Stunden.' : 'Thanks for getting in touch. Dean will respond within 48 hours.'}</p>
+          </div>`;
+      } else {
+        btn.textContent = currentLang === 'de' ? 'Fehler — erneut versuchen' : 'Error — please try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = currentLang === 'de' ? 'Fehler — erneut versuchen' : 'Error — please try again';
+      btn.disabled = false;
+    }
   });
 }
 
