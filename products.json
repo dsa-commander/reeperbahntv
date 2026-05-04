@@ -11,8 +11,5 @@
     "en": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2024_EN" },
     "de": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2024_DE" }
   },
-  "yearbook2025": {
-    "en": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2025_EN" },
-    "de": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2025_DE" }
-  }
+  "yearbook2025": null
 }

@@ -46,6 +46,7 @@ const translations = {
 
     'book.lang.label': 'Sprache',
     'book.buy':        'Jetzt kaufen',
+    'book.sold_out':   'Nicht verfügbar',
     'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
     'book.yearbook2023.badge': 'Jahrbuch',
@@ -170,6 +171,7 @@ const translations = {
 
     'book.lang.label': 'Language',
     'book.buy':        'Buy Now',
+    'book.sold_out':   'Out of Stock',
     'book.stockist.local':   'Or pick up in person in St. Pauli →',
 
     'book.yearbook2023.badge': 'Yearbook',
