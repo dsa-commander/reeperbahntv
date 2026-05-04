@@ -25,7 +25,7 @@ if (empty($name) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL
 $to      = 'contact@reeperbahntv.com';
 $subject = '[ReeperbahnTV] ' . ($enquiry ?: 'Enquiry') . ' — ' . $name;
 $body    = "Name: $name\nE-Mail: $email\nType: $enquiry\n\n$message";
-$headers = "From: noreply@reeperbahntv.com\r\n"
+$headers = "From: contact@reeperbahntv.com\r\n"
          . "Reply-To: $email\r\n"
          . "Content-Type: text/plain; charset=UTF-8\r\n";
 
