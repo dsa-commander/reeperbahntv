@@ -54,7 +54,7 @@ const translations = {
     'book.format.softcover': 'Softcover',
     'book.format.hardcover': 'Hardcover',
     'book.format.ebook':     'E-Book',
-    'book.buy.blurb':        'Bei Blurb kaufen',
+    'book.buy':              'Jetzt kaufen',
     'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
     'book.soon.badge':  'Demnächst',
@@ -169,7 +169,7 @@ const translations = {
     'book.format.softcover': 'Softcover',
     'book.format.hardcover': 'Hardcover',
     'book.format.ebook':     'Ebook',
-    'book.buy.blurb':        'Buy on Blurb',
+    'book.buy':              'Buy Now',
     'book.stockist.local':   'Or pick up in person in St. Pauli →',
 
     'book.soon.badge':  'Coming Soon',
@@ -363,28 +363,44 @@ const revealObserver = new IntersectionObserver(
 revealEls.forEach(el => revealObserver.observe(el));
 
 /* ============================================================
-   BOOK FORMAT PICKER
+   BOOK FORMAT PICKER + STRIPE PRODUCTS
    ============================================================ */
-document.querySelectorAll('.book-card').forEach(card => {
-  const formatBtns = card.querySelectorAll('.format-btn');
-  const priceEl    = card.querySelector('.book-price');
-  const buyBtn     = card.querySelector('.book-buy-btn');
-  if (!formatBtns.length) return;
+fetch('products.json')
+  .then(r => r.json())
+  .then(products => {
+    document.querySelectorAll('.book-card[data-product]').forEach(card => {
+      const productId  = card.dataset.product;
+      const formats    = products[productId];
+      if (!formats) return;
 
-  formatBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Update active state
-      formatBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      const formatBtns = card.querySelectorAll('.format-btn[data-format]');
+      const priceEl    = card.querySelector('.book-price');
+      const buyBtn     = card.querySelector('.book-buy-btn');
 
-      // Update price display
-      if (priceEl) priceEl.textContent = btn.dataset.price;
+      formatBtns.forEach(btn => {
+        const fmt = formats[btn.dataset.format];
+        if (fmt) {
+          btn.dataset.price = fmt.price;
+          btn.dataset.url   = fmt.url;
+        }
+      });
 
-      // Update buy button link
-      if (buyBtn) buyBtn.href = btn.dataset.url;
+      const activeBtn = card.querySelector('.format-btn.active');
+      if (activeBtn && activeBtn.dataset.price) {
+        if (priceEl) priceEl.textContent = activeBtn.dataset.price;
+        if (buyBtn)  buyBtn.href = activeBtn.dataset.url;
+      }
+
+      formatBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          formatBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (priceEl) priceEl.textContent = btn.dataset.price;
+          if (buyBtn)  buyBtn.href = btn.dataset.url;
+        });
+      });
     });
   });
-});
 
 /* ============================================================
    CONTACT FORM
