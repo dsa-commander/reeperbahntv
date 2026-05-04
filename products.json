@@ -4,5 +4,14 @@
   },
   "de": {
     "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_DE_SOFTCOVER" }
+  },
+  "yearbook2023": {
+    "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2023" }
+  },
+  "yearbook2024": {
+    "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2024" }
+  },
+  "yearbook2025": {
+    "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_YEARBOOK2025" }
   }
 }

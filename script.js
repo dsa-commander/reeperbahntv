@@ -55,6 +55,24 @@ const translations = {
     'book.buy':              'Jetzt kaufen',
     'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
+    'book.yearbook2023.badge': 'Jahrbuch',
+    'book.yearbook2023.year':  '2023',
+    'book.yearbook2023.title': 'Reeperbahn Jahrbuch 2023',
+    'book.yearbook2023.desc':  'Das Jahrbuch 2023 dokumentiert ein Jahr auf der Reeperbahn — Veranstaltungen, Veränderungen und unvergessliche Momente im berühmtesten Unterhaltungsviertel der Welt.',
+    'book.yearbook2023.pages': '1. Auflage',
+
+    'book.yearbook2024.badge': 'Jahrbuch',
+    'book.yearbook2024.year':  '2024',
+    'book.yearbook2024.title': 'Reeperbahn Jahrbuch 2024',
+    'book.yearbook2024.desc':  'Das Jahrbuch 2024 fängt ein weiteres Jahr auf der Reeperbahn ein — die Menschen, die Orte und die Geschichten hinter Hamburgs legendärer Straße.',
+    'book.yearbook2024.pages': '1. Auflage',
+
+    'book.yearbook2025.badge': 'Jahrbuch',
+    'book.yearbook2025.year':  '2025',
+    'book.yearbook2025.title': 'Reeperbahn Jahrbuch 2025',
+    'book.yearbook2025.desc':  'Das neueste Jahrbuch — ein frischer Blick auf die Reeperbahn, ihre Geschichte, ihre Menschen und alles, was das Jahr 2025 mit sich brachte.',
+    'book.yearbook2025.pages': '1. Auflage',
+
     'book.soon.badge':  'Demnächst',
     'book.soon.year':   'In Vorbereitung',
     'book.soon.sub':    'Eine Ortsgeschichte eines\nRotlichtviertels',
@@ -167,6 +185,24 @@ const translations = {
     'book.format.softcover': 'Softcover',
     'book.buy':              'Buy Now',
     'book.stockist.local':   'Or pick up in person in St. Pauli →',
+
+    'book.yearbook2023.badge': 'Yearbook',
+    'book.yearbook2023.year':  '2023',
+    'book.yearbook2023.title': 'Reeperbahn Yearbook 2023',
+    'book.yearbook2023.desc':  'The 2023 Yearbook documents a year on the Reeperbahn — events, changes, and unforgettable moments on the world\'s most famous entertainment strip.',
+    'book.yearbook2023.pages': '1st Edition',
+
+    'book.yearbook2024.badge': 'Yearbook',
+    'book.yearbook2024.year':  '2024',
+    'book.yearbook2024.title': 'Reeperbahn Yearbook 2024',
+    'book.yearbook2024.desc':  'The 2024 Yearbook captures another year on the Reeperbahn — the people, the places, and the stories behind Hamburg\'s legendary street.',
+    'book.yearbook2024.pages': '1st Edition',
+
+    'book.yearbook2025.badge': 'Yearbook',
+    'book.yearbook2025.year':  '2025',
+    'book.yearbook2025.title': 'Reeperbahn Yearbook 2025',
+    'book.yearbook2025.desc':  'The latest Yearbook — a fresh look at the Reeperbahn, its history, its people, and everything 2025 brought to Hamburg\'s iconic street.',
+    'book.yearbook2025.pages': '1st Edition',
 
     'book.soon.badge':  'Coming Soon',
     'book.soon.year':   'Forthcoming',
