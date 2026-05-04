@@ -36,7 +36,7 @@ const translations = {
     // Books
     'books.label':    'Veröffentlichungen',
     'books.title':    'BÜCHER',
-    'books.subtitle': 'Erhältlich auf Englisch und Deutsch, direkt bei Blurb — als Softcover, Hardcover oder E-Book. Gedruckt auf Bestellung und weltweit versandt.',
+    'books.subtitle': 'Erhältlich auf Englisch und Deutsch als Softcover. Auf Bestellung gedruckt und weltweit versandt.',
 
     'book.en.badge':  'Englische Ausgabe',
     'book.en.year':   '2018 · 204 Seiten',
@@ -50,10 +50,8 @@ const translations = {
     'book.de.desc':   'Fünf thematische Touren durch das berühmteste Unterhaltungsviertel der Welt. Jeder Ort umfasst zwei Seiten mit historischen und aktuellen Fotografien, die zeigen, wie sich die Straße verändert hat.',
     'book.de.pages':  '188 Seiten · 20×25 cm',
 
-    'book.format.label':     'Format wählen',
+    'book.format.label':     'Format',
     'book.format.softcover': 'Softcover',
-    'book.format.hardcover': 'Hardcover',
-    'book.format.ebook':     'E-Book',
     'book.buy':              'Jetzt kaufen',
     'book.stockist.local':   'Oder vor Ort in St. Pauli erhältlich →',
 
@@ -165,10 +163,8 @@ const translations = {
     'book.de.desc':   "Five themed tours through the world's most famous entertainment district. Each location spans two pages with historical and current photographs showing how the street has changed.",
     'book.de.pages':  '188 pages · 8×10 in',
 
-    'book.format.label':     'Choose format',
+    'book.format.label':     'Format',
     'book.format.softcover': 'Softcover',
-    'book.format.hardcover': 'Hardcover',
-    'book.format.ebook':     'Ebook',
     'book.buy':              'Buy Now',
     'book.stockist.local':   'Or pick up in person in St. Pauli →',
 
@@ -389,6 +385,11 @@ fetch('products.json')
       if (activeBtn && activeBtn.dataset.price) {
         if (priceEl) priceEl.textContent = activeBtn.dataset.price;
         if (buyBtn)  buyBtn.href = activeBtn.dataset.url;
+      }
+
+      if (formatBtns.length <= 1) {
+        const formatSection = card.querySelector('.book-formats');
+        if (formatSection) formatSection.style.display = 'none';
       }
 
       formatBtns.forEach(btn => {

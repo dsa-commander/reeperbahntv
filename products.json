@@ -1,10 +1,8 @@
 {
   "en": {
-    "softcover": { "price": "$43.19", "url": "https://buy.stripe.com/REPLACE_EN_SOFTCOVER" },
-    "hardcover": { "price": "$57.80", "url": "https://buy.stripe.com/REPLACE_EN_HARDCOVER" },
-    "ebook":     { "price": "$10.52", "url": "https://buy.stripe.com/REPLACE_EN_EBOOK" }
+    "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_EN_SOFTCOVER" }
   },
   "de": {
-    "softcover": { "price": "$44.91", "url": "https://buy.stripe.com/REPLACE_DE_SOFTCOVER" }
+    "softcover": { "price": "€19.99", "url": "https://buy.stripe.com/REPLACE_DE_SOFTCOVER" }
   }
 }
